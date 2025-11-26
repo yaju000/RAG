@@ -167,10 +167,10 @@ streamlit run streamlit_rag.py
 ## 📁 檔案說明
 
 ```
-NotOusterAvoidance-collision_box_dev/
-├── multimodal_rag_streamlit.py    # 主程式（Streamlit 網頁介面）
-├── requirements_rag.txt            # Python 依賴清單
-├── README_RAG.md                   # 本說明文件
+RAG_dev/
+├── streamlit_rag.py    # 主程式（Streamlit 網頁介面）
+├── requirements.txt            # Python 依賴清單
+├── README.md                   # 本說明文件
 └── temp_*.pdf                      # 暫存上傳的 PDF（自動清除）
 ```
 
