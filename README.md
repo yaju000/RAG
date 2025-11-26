@@ -102,7 +102,7 @@ ollama serve
 ### 啟動系統
 
 ```bash
-streamlit run multimodal_rag_streamlit.py
+streamlit run streamlit_rag.py
 ```
 
 ### 操作流程
@@ -164,31 +164,6 @@ streamlit run multimodal_rag_streamlit.py
   ```
 - **候補方案**：若 Ollama 無法連線，顯示摘要式參考資料
 
-## ⚙️ 配置選項
-
-### Streamlit 設定
-
-```python
-st.set_page_config(page_title="PDF 問答系統", layout="wide")
-```
-
-### 模型快取
-
-```python
-@st.cache_resource  # CLIP + 文字 Embeddings（載入一次）
-@st.cache_data      # PDF 處理結果（依檔案快取）
-```
-
-### 向量資料庫
-
-```python
-# 不持久化，使用臨時記憶體資料庫
-Chroma.from_documents(
-    documents=text_chunks,
-    embedding=text_embeddings,
-    collection_name=f"temp_collection_{hash(...)}"
-)
-```
 ## 📁 檔案說明
 
 ```
@@ -213,15 +188,6 @@ NotOusterAvoidance-collision_box_dev/
 - **RAM**：至少 8GB（建議 16GB）
 - **GPU**：非必要，但可加速 CLIP Embedding（支援 CUDA）
 - **硬碟**：約 3GB 空間（模型快取）
-
-### 優化技巧
-
-1. **首次載入**：耐心等待模型下載（僅一次）
-2. **GPU 加速**：安裝 CUDA 版本的 PyTorch
-   ```bash
-   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
-   ```
-3. **減少頁面處理**：調整 PDF 解析度（預設 2x）
 
 ## 🛠️ 開發與自訂
 
