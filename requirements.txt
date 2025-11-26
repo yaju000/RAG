@@ -1,0 +1,13 @@
+langchain 
+langchain-community 
+sentence-transformers
+
+# pdf
+pypdf
+
+# PPT
+python-pptx
+unstructured
+
+# Word
+python-docx
